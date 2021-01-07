@@ -15,7 +15,9 @@ function App() {
           <Route path="checkout">
             <Checkout />
           </Route>
-          <Route path="item/:id" element={<Item />} />
+          <Route path="item/:id/:title">
+            <Item />
+          </Route>
         </Routes>
       </Router>
     </div>

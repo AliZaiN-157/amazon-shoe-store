@@ -20,7 +20,7 @@ function Product({ id, title, image, price, rating }) {
         })
     }
     return (
-        <Link to={`item/${id}`} className="product">
+        <Link to={`item/${id}/${title}`} className="product">
             <>
                 <div div className="product__info" >
                     <p>{title}</p>
@@ -32,7 +32,7 @@ function Product({ id, title, image, price, rating }) {
                         {Array(rating)
                             .fill()
                             .map((_, i) => (
-                                <p>🌟</p>
+                                <p>⭐</p>
                             ))}
                     </div>
                 </div >

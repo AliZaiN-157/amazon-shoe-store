@@ -2,12 +2,13 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useStateValue } from '../../ContextProvider/StateProvider';
 import Header from '../Header/Header'
-import Shoes from '../ShoeData.json';
+import Shoes from '../Shoe.json';
 import './Item.css'
 
 function Item() {
-    const { id } = useParams();
-    const shoe = Shoes[id]
+    const { title } = useParams();
+    console.log(title);
+    const shoe = Shoes[title.toLowerCase()];
     const [{ basket }, dispatch] = useStateValue();
 
     const addToBasket = () => {
@@ -30,9 +31,9 @@ function Item() {
             <div className="item">
                 <div className="item__left">
                     <img
+                        className="item__img"
                         src={shoe.img}
                         alt={shoe.name} />
-                        className="item__img"
                 </div>
                 <div className="item__right">
                     <div className="item__details">
@@ -46,7 +47,7 @@ function Item() {
                             {Array(shoe.rating)
                                 .fill()
                                 .map((_, i) => (
-                                    <p>🌟</p>
+                                    <p>⭐</p>
                                 ))}
                         </p>
                         <h2 className="item__price">

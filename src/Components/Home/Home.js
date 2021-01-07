@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Header/Header'
 import Product from '../Product/Product'
 import './Home.css'
-import Shoes from '../ShoeData.json';
+import Shoes from '../Shoe.json';
 
 function Home() {
     return (
